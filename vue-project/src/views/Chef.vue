@@ -6,7 +6,7 @@
           v-for="chef in chefs"
           :key="chef.id"
           :chef="chef"
-          @select="goToChef(chef.id)"
+          @select="goToChef"
         />
       </div>
     </div>
@@ -18,18 +18,15 @@
   import ChefCard from '../components/Chef.vue'
   
   const router = useRouter()
+  
   const chefs = ref([
-    { id: 1, name: 'Chef Abra'},
-    { id: 2, name: 'Chef Bom' },
-    { id: 3, name: 'Chef Charle' },
-    { id: 4, name: 'Chef Donie' },
-    ])
+    { id: 1, name: 'Chef Aber' },
+    { id: 2, name: 'Chef Bartol' },
+  ])
   
-  const goToChef = (id: number) => {
-    router.push({ name: 'ChefDetail', params: { id } })
+  const goToChef = (chefId: number) => {
+    router.push({ name: 'Chef', params: { id: chefId } })
   }
-  
- 
   </script>
   
   <style scoped>
@@ -39,4 +36,3 @@
     gap: 1rem;
   }
   </style>
-  

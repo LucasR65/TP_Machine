@@ -1,39 +1,26 @@
-<!-- src/views/CartPage.vue -->
 <template>
     <div class="cart">
-      <h2>Mon panier</h2>
-      <p v-if="authStore.isAuthenticated">
-        Bienvenue, {{ authStore.user.name }} !
-      </p>
-      <div v-if="cart.items.length === 0">
-        Votre panier est vide.
+      <h2>Panier</h2>
+      <div v-if="cartStore.items.length === 0">Votre panier est vide.</div>
+      <div v-else>
+        <div v-for="item in cartStore.items" :key="item.id" class="cart-item">
+          <span>{{ item.name }} (x{{ item.quantity }}) - {{ item.price * item.quantity }}€</span>
+          <button @click="cartStore.removeItem(item.id)">Retirer un</button>
+        </div>
       </div>
-      <ul v-else>
-        <li v-for="item in cart.items" :key="item.id">
-          {{ item.name }} - {{ item.price }} €
-          <button @click="remove(item.id)">Retirer</button>
-        </li>
-      </ul>
     </div>
   </template>
   
   <script lang="ts" setup>
   import { useCartStore } from '../stores/cart'
-  import { useAuthStore } from '../stores/authen'
   
-  const cart = useCartStore()
-  const authStore = useAuthStore()
-  
-  const remove = (id: number) => {
-    cart.removeItem(id)
-  }
-  
-
+  const cartStore = useCartStore()
   </script>
   
   <style scoped>
-  .cart {
-    padding: 1rem;
+  .cart-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5rem 0;
   }
   </style>
-  

@@ -3,8 +3,11 @@
     <div class="login">
       <h2>Connexion</h2>
       <form @submit.prevent="handleLogin">
-        <input type="text" v-model="username" placeholder="Nom d'utilisateur" required />
+        <div>
+            <input type="text" v-model="username" placeholder="Nom d'utilisateur" required />
         <input type="password" v-model="password" placeholder="Mot de passe" required />
+        </div>
+        
         <button type="submit">Se connecter</button>
       </form>
       <p>

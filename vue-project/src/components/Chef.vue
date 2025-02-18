@@ -1,23 +1,32 @@
 <template>
-    <div class="chef-card" @click="$emit('select')">
+    <div class="chef-card" @click="handleClick">
       <h3>{{ chef.name }}</h3>
+
     </div>
   </template>
   
   <script lang="ts" setup>
-  import {  defineProps } from 'vue'
+  import { defineProps, defineEmits } from 'vue'
   
-  const props = defineProps<{
-    chef: { id: number; name: string; }
-  }>()
+  const props = defineProps({
+    chef: {
+      type: Object,
+      required: true,
+    },
+  })
   
+  const emit = defineEmits(['select'])
+  
+  const handleClick = () => {
+    emit('select', props.chef.id)
+  }
   </script>
   
   <style scoped>
   .chef-card {
-    padding: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
     cursor: pointer;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 8px;
   }
   </style>

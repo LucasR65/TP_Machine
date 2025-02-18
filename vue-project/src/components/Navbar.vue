@@ -19,8 +19,9 @@
   .navbar {
     display: flex;
     flex-wrap: wrap;
-    background-color: #333;
+    background-color: #918383;
     padding: 0.5rem;
+    width: 100%;
     justify-content: space-around;
   }
   

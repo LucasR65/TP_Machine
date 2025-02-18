@@ -3,9 +3,12 @@
     <div class="register">
       <h2>Inscription</h2>
       <form @submit.prevent="handleRegister">
+        <div>
         <input type="text" v-model="name" placeholder="Nom complet" required />
         <input type="text" v-model="username" placeholder="Nom d'utilisateur" required />
         <input type="password" v-model="password" placeholder="Mot de passe" required />
+        </div>
+
         <button type="submit">S'inscrire</button>
       </form>
       <p>

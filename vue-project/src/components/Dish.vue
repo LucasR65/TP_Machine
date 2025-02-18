@@ -7,18 +7,28 @@
   </template>
   
   <script lang="ts" setup>
-  import { onMounted, defineProps } from 'vue'
+  import { defineProps, onMounted } from 'vue'
   
   const props = defineProps<{
     dish: { id: number; name: string; description: string }
   }>()
   
-
+  onMounted(() => {
+    console.log('DishItem monté')
+  })
   </script>
   
   <style scoped>
   .dish-item {
     margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  .dish-item button {
+    margin-top: 0.5rem;
+    padding: 0.4rem;
+    font-size: 0.9rem;
   }
   </style>
   
