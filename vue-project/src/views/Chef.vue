@@ -1,6 +1,6 @@
 <template>
     <div class="chefs-list">
-      <h2>Liste des cuisiniers</h2>
+      <h2 class="title">Liste des cuisiniers</h2>
       <div class="grid">
         <ChefCard
           v-for="chef in chefs"

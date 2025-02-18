@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1>Bienvenue sur HomeMade</h1>
+    <h1 class="title">Bienvenue sur HomeMade</h1>
     <p v-if="authStore.isAuthenticated">
       Utilisateur connecté : {{ authStore.user.name }}
     </p>

@@ -4,8 +4,8 @@
       <h2>{{ chef.name }}</h2>
       <p>Spécialités : {{ chef.specialties.join(', ') }}</p>
       <h3>Ses plats</h3>
-      <div v-for="dish in chef.dishes" :key="dish.id">
-        <DishItem :dish="dish" @add="addToCart" />
+      <div class="container-small" v-for="dish in chef.dishes" :key="dish.id">
+        <DishItem  :dish="dish" @add="addToCart" />
       </div>
     </div>
   </template>
@@ -16,14 +16,12 @@
   import DishItem from '../components/Dish.vue'
   import { useCartStore } from '../stores/cart'
   import { useAuthStore } from '../stores/authen'
-  import { chefs } from '../data/chefs' // Importez la liste des chefs
-  
+  import { chefs } from '../data/chefs' 
   const route = useRoute()
   const router = useRouter()
   const cartStore = useCartStore()
   const authStore = useAuthStore()
   
-  // Définition d'un objet chef par défaut
   const chef = ref({
     id: 0,
     name: '',
@@ -59,6 +57,12 @@
   <style scoped>
   .chef-detail {
     padding: 1rem;
+  }
+
+  .container-small {
+    margin-bottom: 1rem;
+    background-color: aliceblue;
+    border-radius: 10px;
   }
   </style>
   

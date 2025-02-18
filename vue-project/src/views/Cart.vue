@@ -5,7 +5,7 @@
       <div v-else>
         <div v-for="item in cartStore.items" :key="item.id" class="cart-item">
           <span>{{ item.name }} (x{{ item.quantity }}) - {{ item.price * item.quantity }}€</span>
-          <button @click="cartStore.removeItem(item.id)">Retirer un</button>
+          <button class="button" @click="cartStore.removeItem(item.id)">Retirer un</button>
         </div>
       </div>
     </div>

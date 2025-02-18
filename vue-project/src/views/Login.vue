@@ -1,14 +1,13 @@
-<!-- src/views/LoginPage.vue -->
 <template>
     <div class="login">
-      <h2>Connexion</h2>
+      <h2 class="title">Connexion</h2>
       <form @submit.prevent="handleLogin">
         <div>
-            <input type="text" v-model="username" placeholder="Nom d'utilisateur" required />
-        <input type="password" v-model="password" placeholder="Mot de passe" required />
+            <input class="input"  type="text" v-model="username" placeholder="Nom d'utilisateur" required />
+        <input class="input"  type="password" v-model="password" placeholder="Mot de passe" required />
         </div>
         
-        <button type="submit">Se connecter</button>
+        <button class="button" type="submit">Se connecter</button>
       </form>
       <p>
         Vous n'avez pas de compte ?

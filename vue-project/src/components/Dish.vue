@@ -2,7 +2,7 @@
     <div class="dish-item">
       <h4>{{ dish.name }}</h4>
       <p>{{ dish.description }}</p>
-      <button @click="$emit('add', dish)">Ajouter au panier</button>
+      <button class="button" @click="$emit('add', dish)">Ajouter au panier</button>
     </div>
   </template>
   

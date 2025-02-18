@@ -28,5 +28,6 @@
     border: 1px solid #ccc;
     padding: 1rem;
     border-radius: 8px;
+    background-color: rgb(252, 212, 224);
   }
   </style>
