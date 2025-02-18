@@ -1,9 +1,25 @@
-<script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
+<template>
+  <div class="home">
+    <h1>Bienvenue sur HomeMade</h1>
+    <p v-if="authStore.isAuthenticated">
+      Utilisateur connecté : {{ authStore.user.name }}
+    </p>
+    <nav>
+      <router-link to="/chefs">Voir les cuisiniers</router-link>
+    </nav>
+  </div>
+</template>
+
+<script lang="ts" setup>
+import { useAuthStore } from '../stores/authen'
+
+const authStore = useAuthStore()
+
+
 </script>
 
-<template>
-  <main>
-    <TheWelcome />
-  </main>
-</template>
+<style scoped>
+.home {
+  padding: 1rem;
+}
+</style>
